@@ -141,7 +141,7 @@ export default function ProjectDetails({ user }) {
                         {file.format} • Uploaded by {file.user.name}
                       </div>
                     </div>
-                    <a href={`http://localhost:5000${file.url}`} target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontSize: '0.85rem' }}>View</a>
+                    <a href={import.meta.env.PROD ? file.url : `http://localhost:5000${file.url}`} target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontSize: '0.85rem' }}>View</a>
                     {(user.id === file.userId || user.isAdmin) && (
                       <button onClick={() => handleDeleteAttachment(file.id)} style={{ background: 'none', color: 'var(--danger)' }}>
                         <Trash2 size={18} />
