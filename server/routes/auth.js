@@ -15,6 +15,7 @@ router.post('/register', async (req, res) => {
     });
     res.status(201).json({ message: 'User created', userId: user.id });
   } catch (err) {
+    console.error("Registration error:", err);
     res.status(400).json({ error: 'User already exists or invalid data' });
   }
 });
