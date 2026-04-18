@@ -31,6 +31,6 @@ A web-based project management tool mimicking Basecamp features.
    ```
 
 ## Cloud Hosting
-This project is deployment-ready for **Render** or **Railway**.
-- **Frontend**: Connect your GitHub and point to the `client` folder.
-- **Backend**: Point to the `server` folder and set the `DATABASE_URL` and `JWT_SECRET` environment variables.
+This project is deployment-ready for an **AWS EC2** instance (or any standard Linux VPS).
+- The frontend is built and served via Nginx.
+- The backend runs on Node.js using PM2, with SQLite for persistent local storage.
